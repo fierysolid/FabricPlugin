@@ -1,5 +1,5 @@
 // Type definitions for cordova-fabric-plugin 1.0.0
-// Project: https://github.com/sarriaroman/FabricPlugin
+// Project: https://github.com/fierysolid/FabricPlugin
 // Definitions by: Justin Unterreiner <https://github.com/Justin-Credible>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 

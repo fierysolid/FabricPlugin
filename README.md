@@ -20,7 +20,7 @@ cordova plugin add cordova-fabric-plugin --variable FABRIC_API_KEY=XXX --variabl
 
 # Or to install directly from github:
 # (replace x.x.x with the tag of the version your want, or omit for HEAD)
-cordova plugin add https://github.com/sarriaroman/FabricPlugin#x.x.x  --variable FABRIC_API_KEY=XXX --variable FABRIC_API_SECRET=xxx
+cordova plugin add https://github.com/fierysolid/FabricPlugin#x.x.x  --variable FABRIC_API_KEY=XXX --variable FABRIC_API_SECRET=xxx
 ```
 
 > Note: If you have never registered an app with your organization, the [organization page](https://www.fabric.io/settings/organizations/) may redirect you to a wizard preventing you from obtaining your keys. You may be able to obtain your keys from [this page](https://fabric.io/kits/ios/crashlytics/install). Scroll down to the "Run Script Build Phase" block. The first, shorter string is the API key and the second, longer string is the build secret. If that doesn't work you can follow the wizard and integrate the kit into a dummy "Hello World" project which should then unlock the organization page.
@@ -137,6 +137,7 @@ If you wish to contribute please see `CONTRIBUTING.md`.
 
 # Authors
 
+- [Jordan Schoen](https://github.com/fierysolid)
 - [Román A. Sarria](https://github.com/sarriaroman)
 - [Justin Unterreiner](https://github.com/Justin-Credible)
 - Based on the following plugins:

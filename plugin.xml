@@ -30,7 +30,7 @@
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FabricPlugin">
-                <param name="android-package" value="com.sarriaroman.fabric.FabricPlugin"/>
+                <param name="android-package" value="com.fierysolid.fabric.FabricPlugin"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -43,8 +43,8 @@
             <meta-data android:name="io.fabric.ApiKey" android:value="$FABRIC_API_KEY"/>
         </config-file>
 
-        <source-file src="src/android/FabricPlugin.java" target-dir="src/com/sarriaroman/fabric"/>
-        <source-file src="src/android/JavaScriptException.java" target-dir="src/com/sarriaroman/fabric"/>
+        <source-file src="src/android/FabricPlugin.java" target-dir="src/com/fierysolid/fabric"/>
+        <source-file src="src/android/JavaScriptException.java" target-dir="src/com/fierysolid/fabric"/>
 
         <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
     </platform>

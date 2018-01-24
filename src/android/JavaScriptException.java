@@ -1,4 +1,4 @@
-package com.sarriaroman.fabric;
+package com.fierysolid.fabric;
 
 public class JavaScriptException extends Exception {
       public JavaScriptException(String message)
