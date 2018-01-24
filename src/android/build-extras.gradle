@@ -1,5 +1,21 @@
+import java.util.regex.Pattern
 
-def packageName = getPackageName()
+def doExtractStringFromManifest(name) {
+    def manifestFile = file("AndroidManifest.xml")
+    if (!manifestFile.exists()) {
+      manifestFile = file("src/main/AndroidManifest.xml")
+    }
+    def pattern = Pattern.compile(name + "=\"(.*?)\"")
+    def matcher = pattern.matcher(manifestFile.getText())
+    matcher.find()
+    return matcher.group(1)
+}
+
+android {
+    defaultConfig {
+        applicationId doExtractStringFromManifest("package")
+    }
+}
 
 buildscript {
   repositories {
@@ -8,28 +24,10 @@ buildscript {
 
   dependencies {
     classpath 'io.fabric.tools:gradle:1.+'
+    classpath 'com.crashlytics.sdk.android:crashlytics:2.6.8@aar'
   }
 }
 
-android {
-    defaultConfig {
-        applicationId packageName
-    }
-}
-
-repositories {
-    maven { url 'https://maven.fabric.io/public' }
-}
-
-dependencies {
-  compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
-    transitive = true;
-  }
-}
-
-def getPackageName() {
-    def config = file("res/xml/config.xml").getText()
-    def xml = new XmlParser(false, false).parseText(config)
-    def id = xml.attribute("id")
-    return id.replaceAll('-','_')
+ext.postBuildExtras = {
+    apply plugin: 'io.fabric'
 }
